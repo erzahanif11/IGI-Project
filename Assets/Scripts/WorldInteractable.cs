@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class WorldInteract : MonoBehaviour, IInteractable
 {
-    [TextArea(3, 10)] public string interactText;
-
+    public DialogueManager dialogueManager;
+    public DialogueData dialogueData;
     public void Interact(Transform interactor)
     {
-        Debug.Log(interactText);
-    }
-
-    public string GetInteractText()
-    {
-        return interactText;
+        if(dialogueData != null && dialogueManager != null)
+        {
+            dialogueManager.dialogueData = dialogueData;
+            dialogueManager.StartDialogue();
+        }
+        else
+        {
+            Debug.LogWarning("DialogueData or DialogueManager is not set.");
+        }
     }
 }

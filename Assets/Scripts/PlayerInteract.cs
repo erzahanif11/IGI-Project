@@ -17,14 +17,10 @@ public class PlayerInteract : MonoBehaviour
         if (Physics.Raycast(origin, direction, out hit, directionLength) || Physics.Raycast(origin, direction, out hit, direction2Length))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-            if (interactable != null)
-            {
-                // Display interaction text (if you have a UI system)
-                Debug.Log(interactable.GetInteractText());
-            }
+
         }
-        {
-            if(Input.GetKeyDown(KeyCode.E))
+
+        if(Input.GetKeyDown(KeyCode.E))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
@@ -34,4 +30,4 @@ public class PlayerInteract : MonoBehaviour
             }
         }
     }
-}
+
