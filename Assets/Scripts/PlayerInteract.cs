@@ -17,17 +17,10 @@ public class PlayerInteract : MonoBehaviour
         if (Physics.Raycast(origin, direction, out hit, directionLength) || Physics.Raycast(origin, direction, out hit, direction2Length))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-
-        }
-
-        if(Input.GetKeyDown(KeyCode.E))
+            if (interactable != null && Input.GetKeyDown(KeyCode.E))
             {
-                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-                if (interactable != null)
-                {
-                    interactable.Interact(transform);
-                }
+                interactable.Interact(transform);
             }
         }
     }
-
+}
