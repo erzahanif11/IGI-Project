@@ -10,7 +10,12 @@ public class DialogueManager : MonoBehaviour
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+    private PlayerController playerController;
 
+    void Start()
+    {
+        playerController = FindObjectOfType<PlayerController>();
+    }
     private void Update()
     {
         if (isDialogueActive && Input.GetKeyDown(KeyCode.Return))
@@ -28,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         isDialogueActive = true;
         dialogueBox.SetActive(true);
-        nameText.text = dialogueData.speakerName;
+        playerController.enabled = false;
         StartCoroutine(TypeDialogue());
     }
 
@@ -37,7 +42,7 @@ public class DialogueManager : MonoBehaviour
         if (isTyping)
         {
             StopAllCoroutines();
-            dialogueText.text = dialogueData.dialogueLines[dialogueIndex];
+            dialogueText.text = dialogueData.dialogueLines[dialogueIndex].dialogueText;
             isTyping = false;
             return;
         }
@@ -55,7 +60,8 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-        foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
+        nameText.text = dialogueData.dialogueLines[dialogueIndex].speakerName;
+        foreach (char letter in dialogueData.dialogueLines[dialogueIndex].dialogueText)
         {
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueData.typingSpeed);
@@ -70,5 +76,6 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         dialogueText.text = "";
         nameText.text = "";
+        playerController.enabled = true;
     }
 }

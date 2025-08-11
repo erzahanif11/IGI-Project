@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
   m_Name: Dinding 1
   m_EditorClassIdentifier: 
-  speakerName: Hanni
   dialogueLines:
-  - 'Gambar ini udah ada dari SMA. '
-  - "Tapi waktu terus jalan, dan aku masih di sini\u2026"
+  - speakerName: Hanni
+    dialogueText: Gambar-gambar ini udah dari SMA.
+  - speakerName: Hanni
+    dialogueText: waktu terus berjalan, tapi aku masih disini...
   typingSpeed: 0.05

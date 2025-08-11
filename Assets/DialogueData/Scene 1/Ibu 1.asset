@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
   m_Name: Ibu 1
   m_EditorClassIdentifier: 
-  speakerName: Ibu
   dialogueLines:
-  - Hanni, Bangun ini udah siang, hari ini bantu ibu jaga laundry yaa!
+  - speakerName: Ibu
+    dialogueText: Hanni, Bangun ini udah siang, hari ini bantu ibu jaga laundry yaa!
+  - speakerName: Hanni
+    dialogueText: "Hooaam\u2026"
+  - speakerName: Ibu
+    dialogueText: Ayoo, ibu udah bikin sarapan kesukaanmu loo!
   typingSpeed: 0.05

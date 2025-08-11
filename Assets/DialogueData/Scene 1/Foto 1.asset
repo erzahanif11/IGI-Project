@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
   m_Name: Foto 1
   m_EditorClassIdentifier: 
-  speakerName: Hanni
   dialogueLines:
-  - Ibu selalu senyum...
-  - "Meskipun capek\u2026 Hanni juga harus kuat."
+  - speakerName: Hanni
+    dialogueText: Ibu selalu senyum...
+  - speakerName: Hanni
+    dialogueText: meskipun capek... Hanni juga harus kuat.
   typingSpeed: 0.05
