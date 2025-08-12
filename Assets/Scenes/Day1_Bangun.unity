@@ -251,7 +251,7 @@ Transform:
   m_GameObject: {fileID: 13598840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: 4.311, z: -15.443001}
+  m_LocalPosition: {x: -3.19, y: 4.124, z: -14.923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -299,7 +299,9 @@ GameObject:
   m_Component:
   - component: {fileID: 36465049}
   - component: {fileID: 36465048}
+  - component: {fileID: 36465051}
   - component: {fileID: 36465047}
+  - component: {fileID: 36465050}
   m_Layer: 0
   m_Name: Cutscene Controller
   m_TagString: Untagged
@@ -321,6 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneDirector: {fileID: 36465048}
   playerMovement: {fileID: 70386425}
+  playableAssets:
+  - {fileID: 11400000, guid: 04092f5faabc7b54496966018235972b, type: 2}
 --- !u!320 &36465048
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -338,8 +342,11 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 3481754522024485541, guid: 04092f5faabc7b54496966018235972b, type: 2}
     value: {fileID: 321818021}
+  - key: {fileID: -2710280256781295457, guid: 04092f5faabc7b54496966018235972b, type: 2}
+    value: {fileID: 36465050}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - 3e51bc4eac594964fb73ae61364d1702: {fileID: 1901054491}
 --- !u!4 &36465049
 Transform:
   m_ObjectHideFlags: 0
@@ -355,6 +362,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36465050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36465046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 4bcae5c895b0f0a45b9067176b09b413, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &36465051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36465046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e95025c11a1d154e95b17c2b9f0bb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  director: {fileID: 36465048}
+  dialogueManager: {fileID: 825968219}
+  dialogueData: {fileID: 0}
 --- !u!1 &70386423
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08bd56383952e9448abf058cc5830c61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.173
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 08bd56383952e9448abf058cc5830c61, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2416,10 +2456,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74475d1960b204b992c542cc4c6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 0}
+  dialogueData: {fileID: 11400000, guid: 1b95819714767d9409b74b57dd17c95e, type: 2}
   dialogueBox: {fileID: 302606338}
   dialogueText: {fileID: 2072426059}
   nameText: {fileID: 2045479073}
+  CutsceneDialogueControl: {fileID: 36465051}
 --- !u!1 &910950233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,7 +3075,7 @@ Transform:
   m_GameObject: {fileID: 1901054490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: 4.311, z: -15.443001}
+  m_LocalPosition: {x: -3.19, y: 4.124, z: -14.923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3072,7 +3113,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 1.61, z: -4.02}
+  FollowOffset: {x: 0, y: 1.25, z: -3.5}
 --- !u!1 &1945592763
 GameObject:
   m_ObjectHideFlags: 0

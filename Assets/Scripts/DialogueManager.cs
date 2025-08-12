@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueData dialogueData;
     public GameObject dialogueBox;
     public TMP_Text dialogueText, nameText;
+    public CutsceneDialogueControl CutsceneDialogueControl;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
@@ -14,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindAnyObjectByType<PlayerController>();
     }
     private void Update()
     {
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour
             isTyping = false;
             return;
         }
-        else if(dialogueIndex < dialogueData.dialogueLines.Length - 1)
+        else if (dialogueIndex < dialogueData.dialogueLines.Length - 1)
         {
             dialogueIndex++;
             StartCoroutine(TypeDialogue());
@@ -77,5 +78,14 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         nameText.text = "";
         playerController.enabled = true;
+        OnDialogueFinished();
+    }
+
+    public void OnDialogueFinished()
+    {
+        if (CutsceneDialogueControl != null)
+        {
+            CutsceneDialogueControl.ResumeCutscene();
+        }
     }
 }
