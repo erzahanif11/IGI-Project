@@ -14,7 +14,7 @@ public class PlayerInteract : MonoBehaviour
         Debug.DrawRay(origin, direction2 * direction2Length, Color.blue);
 
         RaycastHit hit;
-        if (Physics.Raycast(origin, direction, out hit, directionLength) || Physics.Raycast(origin, direction, out hit, direction2Length))
+        if (Physics.Raycast(origin, direction, out hit, directionLength) || Physics.Raycast(origin, direction2, out hit, direction2Length))
         {
             IInteractable interactable = hit.collider.GetComponent<IInteractable>();
             if (interactable != null && Input.GetKeyDown(KeyCode.E))
