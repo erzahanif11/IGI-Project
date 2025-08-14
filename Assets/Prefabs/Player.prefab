@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5499616485190991714
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3647109450678461611}
+  - component: {fileID: 4081046660106840521}
+  m_Layer: 0
+  m_Name: Player Interact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3647109450678461611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499616485190991714}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7014545194254872758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4081046660106840521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499616485190991714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5794f6af1f4b6db4ab5801192b19aaf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5650935327857355023
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +54,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7014545194254872758}
   - component: {fileID: 3099248723711661813}
-  - component: {fileID: 813952529868506588}
   - component: {fileID: 5807918023364781939}
   - component: {fileID: 9065236092020061042}
   - component: {fileID: 3716908830387577181}
@@ -35,6 +78,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388525205360348660}
+  - {fileID: 3647109450678461611}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3099248723711661813
@@ -51,18 +95,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8631794938749339916}
   moveSpeed: 2.5
---- !u!114 &813952529868506588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5650935327857355023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5794f6af1f4b6db4ab5801192b19aaf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &5807918023364781939
 CapsuleCollider:
   m_ObjectHideFlags: 0

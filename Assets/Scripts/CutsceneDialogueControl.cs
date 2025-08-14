@@ -19,6 +19,7 @@ public class CutsceneDialogueControl : MonoBehaviour, INotificationReceiver
 
             // Pause Timeline
             director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+
         }
     }
 

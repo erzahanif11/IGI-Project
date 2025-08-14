@@ -6,6 +6,7 @@ public class CutsceneTrigger : MonoBehaviour
     public GameObject cutscene;
     public PlayableDirector cutsceneDirector;
     public MonoBehaviour playerMovement;
+    public MonoBehaviour playerInteract;
     public PlayableAsset[] playableAssets;
     private bool isCutscenePlaying = false;
 
@@ -18,9 +19,11 @@ public class CutsceneTrigger : MonoBehaviour
         if (isCutscenePlaying)
         {
             playerMovement.enabled = false;
+            playerInteract.enabled = false;
         }
         else{
             playerMovement.enabled = true;
+            playerInteract.enabled = true;
         }
     }
     public void PlayCutscene(int index)
