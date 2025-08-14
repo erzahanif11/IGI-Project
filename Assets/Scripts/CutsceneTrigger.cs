@@ -3,15 +3,30 @@ using UnityEngine.Playables;
 
 public class CutsceneTrigger : MonoBehaviour
 {
+    public GameObject cutscene;
     public PlayableDirector cutsceneDirector;
     public MonoBehaviour playerMovement;
     public PlayableAsset[] playableAssets;
     private bool isCutscenePlaying = false;
 
+    private void Awake()
+    {
+        cutscene.SetActive(false);
+    }
+    private void Update()
+    {
+        if (isCutscenePlaying)
+        {
+            playerMovement.enabled = false;
+        }
+        else{
+            playerMovement.enabled = true;
+        }
+    }
     public void PlayCutscene(int index)
     {
+        cutscene.SetActive(true);
         if (index < 0 || index >= playableAssets.Length) return;
-        playerMovement.enabled = false;
         Input.ResetInputAxes();
 
         cutsceneDirector.playableAsset = playableAssets[index];
@@ -23,9 +38,9 @@ public class CutsceneTrigger : MonoBehaviour
 
     private void OnCutsceneEnd(PlayableDirector director)
     {
-        playerMovement.enabled = true;
         isCutscenePlaying = false;
 
         cutsceneDirector.stopped -= OnCutsceneEnd;
+        cutscene.SetActive(false);
     }
 }
