@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Day1_Bangun.unity
+    path: Assets/Scenes/Kamar Hanni.unity
     guid: f9315d297a80bd1429724e3bb0e05f7f
   - enabled: 1
-    path: Assets/Scenes/Day1_Dapur.unity
+    path: Assets/Scenes/Depan Rumah.unity
     guid: 04e32c89e9341524596d17d6554dd170
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WorldInteract : MonoBehaviour, IInteractable
+public class WorldInteractable : MonoBehaviour, IInteractable
 {
     public DialogueManager dialogueManager;
     public DialogueData dialogueData;

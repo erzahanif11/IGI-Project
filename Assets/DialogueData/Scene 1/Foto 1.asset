@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
-  m_Name: Dinding 1
+  m_Name: Foto 1
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: Hanni
-    dialogueText: Gambar-gambar ini udah dari SMA.
-  - speakerName: Hanni
-    dialogueText: waktu terus berjalan, tapi aku masih disini...
+    dialogueText: Foto Ibu dan Ayah...
   typingSpeed: 0.05

@@ -1,17 +1,18 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
-public class DialogueManager : MonoBehaviour
+public class PhoneManager : MonoBehaviour
 {
     public DialogueData dialogueData;
     public GameObject dialogueBox;
-    public TMP_Text dialogueText, nameText;
-    public CutsceneDialogueControl CutsceneDialogueControl;
+    public TMP_Text dialogueText;
+    public GameObject dialoguePanel;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private PlayerController playerController;
+    private bool isInteracted = false;
 
     void Start()
     {
@@ -32,9 +33,16 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         FindAnyObjectByType<CutsceneTrigger>().forceDisable = true;
-        dialogueIndex = 0;
         isDialogueActive = true;
         dialogueBox.SetActive(true);
+        dialoguePanel.SetActive(false);
+        if (isInteracted)
+        {
+            dialoguePanel.SetActive(true);
+            dialogueText.text = dialogueData.dialogueLines[1].dialogueText;
+            return;
+        }
+        dialogueIndex = 0;
         playerController.enabled = false;
         StartCoroutine(TypeDialogue());
     }
@@ -62,9 +70,12 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
-        nameText.text = dialogueData.dialogueLines[dialogueIndex].speakerName;
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex].dialogueText)
         {
+            if(dialogueIndex > 0)
+            {
+                dialoguePanel.SetActive(true);
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
@@ -74,20 +85,8 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         FindAnyObjectByType<CutsceneTrigger>().forceDisable = false;
-        isDialogueActive = false;
+        isInteracted = true;
         dialogueBox.SetActive(false);
-        dialogueIndex = 0;
-        dialogueText.text = "";
-        nameText.text = "";
         playerController.enabled = true;
-        OnDialogueFinished();
-    }
-
-    public void OnDialogueFinished()
-    {
-        if (CutsceneDialogueControl != null)
-        {
-            CutsceneDialogueControl.ResumeCutscene();
-        }
     }
 }

@@ -9,6 +9,7 @@ public class CutsceneTrigger : MonoBehaviour
     public MonoBehaviour playerInteract;
     public PlayableAsset[] playableAssets;
     private bool isCutscenePlaying = false;
+    public bool forceDisable = false;
 
     private void Awake()
     {
@@ -16,7 +17,7 @@ public class CutsceneTrigger : MonoBehaviour
     }
     private void Update()
     {
-        if (isCutscenePlaying)
+        if (isCutscenePlaying || forceDisable)
         {
             playerMovement.enabled = false;
             playerInteract.enabled = false;
