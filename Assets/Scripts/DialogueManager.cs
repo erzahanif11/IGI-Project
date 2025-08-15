@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public CutsceneDialogueControl CutsceneDialogueControl;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    public bool isTyping, isDialogueActive;
     private PlayerController playerController;
 
     void Start()

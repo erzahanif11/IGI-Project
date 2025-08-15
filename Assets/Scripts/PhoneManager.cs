@@ -10,7 +10,7 @@ public class PhoneManager : MonoBehaviour
     public GameObject dialoguePanel;
 
     private int dialogueIndex;
-    private bool isTyping, isDialogueActive;
+    public bool isTyping, isDialogueActive;
     private PlayerController playerController;
     private bool isInteracted = false;
 
@@ -87,6 +87,7 @@ public class PhoneManager : MonoBehaviour
         FindAnyObjectByType<CutsceneTrigger>().forceDisable = false;
         isInteracted = true;
         dialogueBox.SetActive(false);
+        isDialogueActive = false;
         playerController.enabled = true;
     }
 }

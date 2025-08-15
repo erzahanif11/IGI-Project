@@ -5,8 +5,14 @@ public class DoorSceneLoader : MonoBehaviour, IInteractable
 {
     [SerializeField] private SceneReference[] sceneLoad;
     [SerializeField] private int sceneIndex = 0;
+    public bool canLoadScene;
     public void Interact(Transform interactor)
     {
+        if (!canLoadScene)
+        {
+            Debug.LogWarning("Scene loading is currently disabled.");
+            return;
+        }
         if (sceneLoad != null && sceneLoad.Length > 0)
         {
             if (sceneIndex >= 0 && sceneIndex < sceneLoad.Length && sceneLoad[sceneIndex] != null)
