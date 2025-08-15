@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 521, y: -60.574738}
+  m_AnchoredPosition: {x: 521, y: -142}
   m_SizeDelta: {x: -1065.0259, y: -154.8505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3252953595648144115
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -44.71634, z: -905.8406, w: 0.7734451}
+  m_margin: {x: 0, y: -44.71634, z: -903.0707, w: 17.934921}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -387,11 +387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d74475d1960b204b992c542cc4c6f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueData: {fileID: 11400000, guid: 1b95819714767d9409b74b57dd17c95e, type: 2}
+  dialogueData: {fileID: 0}
   dialogueBox: {fileID: 8974627023548874065}
   dialogueText: {fileID: 3389391871775830295}
   nameText: {fileID: 612233516945715091}
   CutsceneDialogueControl: {fileID: 0}
+  isTyping: 0
+  isDialogueActive: 0
 --- !u!1 &6367696278277333144
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2990066423963937187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -566,7 +568,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 155.6521}
-  m_SizeDelta: {x: 1200, y: 211.3041}
+  m_SizeDelta: {x: 1200, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1233509560300667887
 CanvasRenderer:

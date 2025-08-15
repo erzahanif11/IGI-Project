@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
+  m_Name: Petugas Tagihan
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - speakerName: Petugas Rusun
+    dialogueText: Maaf dek, Rusun ini sudah masuk tenggat.
+  - speakerName: Petugas Rusun
+    dialogueText: Minimal bayar akhir bulan, ya, sekaligus sama dua bulan yang lalu.
+  - speakerName: Hanni
+    dialogueText: "\u2026"
+  - speakerName: Hanni
+    dialogueText: "\u2026Iya, Pak, saya masih berusaha cari uangya."
+  - speakerName: Petugas Rusun
+    dialogueText: hmm,, begini dek untuk bulan ini jika adik ga bayar juga, mau gamau
+      adek harus pindah..
+  - speakerName: Hanni
+    dialogueText: tappi pak, dulu kan ibu saya sering bantu bapak, dan bapak tau
+      kan ibu saya sudah meninggal jadi saya harus cari sendirii
+  - speakerName: Petugas Rusun
+    dialogueText: saya juga rugi dek, saya tau ibumu dulu baik sekali tapi saya juga
+      butuh uang untuk biaya sehari-hari.
+  - speakerName: Hanni
+    dialogueText: ...
+  - speakerName: Petugas Rusun
+    dialogueText: saya tinggal dulu ya dek ada urusan lain, yang tadi mohon dipikirkan
+      baik2
+  typingSpeed: 0.05
