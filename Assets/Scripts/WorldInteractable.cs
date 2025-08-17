@@ -5,7 +5,7 @@ public class WorldInteractable : MonoBehaviour, IInteractable
 {
     public DialogueManager dialogueManager;
     public DialogueData dialogueData;
-    public Scene1 gameManager;
+    public SceneInteractionManager sceneManager;
     public string objectName;
     public void Interact(Transform interactor)
     {
@@ -24,13 +24,6 @@ public class WorldInteractable : MonoBehaviour, IInteractable
     IEnumerator WaitUntilDialogueFinished()
     {
         yield return new WaitUntil(() => !dialogueManager.isDialogueActive);
-        if (objectName == "Laptop")
-        {
-            gameManager.InteractLaptop();
-        }
-        if (objectName == "Figura")
-        {
-            gameManager.InteractFigura();
-        }
+        sceneManager.RegisterInteraction(objectName);
     }
 }

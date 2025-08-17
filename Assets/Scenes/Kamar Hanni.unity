@@ -610,7 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 825968219}
   dialogueData: {fileID: 11400000, guid: 468d6289bf1c8544794b46ef60b0054c, type: 2}
-  gameManager: {fileID: 2090144525}
+  sceneManager: {fileID: 2090144525}
   objectName: Figura
 --- !u!65 &730857348
 BoxCollider:
@@ -1414,7 +1414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneManager: {fileID: 2121254248}
   dialogueData: {fileID: 11400000, guid: 1b95819714767d9409b74b57dd17c95e, type: 2}
-  gameManager: {fileID: 2090144525}
+  sceneManager: {fileID: 2090144525}
 --- !u!1 &1581839366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueManager: {fileID: 825968219}
   dialogueData: {fileID: 11400000, guid: 150bec033a1740140892c3ae8fced9ee, type: 2}
-  gameManager: {fileID: 2090144525}
+  sceneManager: {fileID: 2090144525}
   objectName: Laptop
 --- !u!65 &1643964314
 BoxCollider:
@@ -2165,6 +2165,22 @@ PrefabInstance:
       propertyPath: doorSceneLoader
       value: 
       objectReference: {fileID: 736397668}
+    - target: {fileID: 8434100351884857335, guid: aef317d607f569240909f93e03670949, type: 3}
+      propertyPath: requiredObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434100351884857335, guid: aef317d607f569240909f93e03670949, type: 3}
+      propertyPath: 'requiredObjects.Array.data[0]'
+      value: HP
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434100351884857335, guid: aef317d607f569240909f93e03670949, type: 3}
+      propertyPath: 'requiredObjects.Array.data[1]'
+      value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434100351884857335, guid: aef317d607f569240909f93e03670949, type: 3}
+      propertyPath: 'requiredObjects.Array.data[2]'
+      value: Figura
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -5,7 +5,7 @@ public class PhoneInteractable : MonoBehaviour,IInteractable
 {
     public PhoneManager phoneManager;
     public DialogueData dialogueData;
-    public Scene1 gameManager;
+    public SceneInteractionManager sceneManager;
     public void Interact(Transform interactor)
     {
         if (dialogueData != null && phoneManager != null)
@@ -23,6 +23,6 @@ public class PhoneInteractable : MonoBehaviour,IInteractable
     IEnumerator WaitUntilDialogueFinished()
     {
         yield return new WaitUntil(() => !phoneManager.isDialogueActive);
-        gameManager.InteractHP();
+        sceneManager.RegisterInteraction(gameObject.name);
     }
 }
