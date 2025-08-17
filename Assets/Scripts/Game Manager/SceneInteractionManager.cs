@@ -20,9 +20,6 @@ public class SceneInteractionManager : MonoBehaviour
 
         vCam1.Priority = 12;
         vCam2.Priority = 10;
-
-        // Optional: mainkan cutscene awal
-        cutsceneTrigger.PlayCutscene(0);
     }
 
     // Dipanggil oleh object interaktif
@@ -52,5 +49,10 @@ public class SceneInteractionManager : MonoBehaviour
         vCam2.Priority = 10;
         vCam1.Priority = 12;
         doorSceneLoader.canLoadScene = true;
+    }
+
+    public void LookAt()
+    {
+        StartCoroutine(KetokPintu());
     }
 }

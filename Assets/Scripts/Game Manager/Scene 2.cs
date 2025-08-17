@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class Day1_2 : MonoBehaviour
+public class Scene2 : MonoBehaviour
 {
-    public CutsceneTrigger cutsceneTrigger;
+    public SceneInteractionManager sceneInteractionManager;
     private void Start()
     {
+        sceneInteractionManager.LookAt();
     }
 }
