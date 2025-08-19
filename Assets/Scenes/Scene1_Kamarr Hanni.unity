@@ -1902,7 +1902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56113ec8e565317499680b282e2a8e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneTrigger: {fileID: 0}
+  cutsceneTrigger: {fileID: 861162470}
 --- !u!1 &2121254246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,7 +2010,7 @@ PrefabInstance:
       objectReference: {fileID: 247979455}
     - target: {fileID: 6422796084954309565, guid: 03aaa9f0a9012f649b5db573be6d5367, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.224107
+      value: 5.114121
       objectReference: {fileID: 0}
     - target: {fileID: 6422796084954309565, guid: 03aaa9f0a9012f649b5db573be6d5367, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3190,8 +3190,12 @@ PrefabInstance:
       value: 0.21585464
       objectReference: {fileID: 0}
     - target: {fileID: 3872429119838763382, guid: 576934c62294d0941a85aa021b2ab1ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1389519
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872429119838763382, guid: 576934c62294d0941a85aa021b2ab1ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.43
+      value: 0.7716
       objectReference: {fileID: 0}
     - target: {fileID: 3872429119838763382, guid: 576934c62294d0941a85aa021b2ab1ca, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3325,7 +3329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2439248723788105265, guid: ed39b714468c9844fa5e352bc029841d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -965.2
+      value: -970.31
       objectReference: {fileID: 0}
     - target: {fileID: 2439248723788105265, guid: ed39b714468c9844fa5e352bc029841d, type: 3}
       propertyPath: m_LocalPosition.y

@@ -14,7 +14,7 @@ public class SceneInteractionManager : MonoBehaviour
     public CinemachineCamera vCam1;
     public CinemachineCamera vCam2;
 
-    private void Start()
+    private void Awake()
     {
         doorSceneLoader.canLoadScene = false;
 
