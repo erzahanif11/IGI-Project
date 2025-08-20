@@ -13,6 +13,7 @@ public class SceneInteractionManager : MonoBehaviour
     public CutsceneTrigger cutsceneTrigger;
     public CinemachineCamera vCam1;
     public CinemachineCamera vCam2;
+    public WorldInteractable worldInteractable;
 
     private void Awake()
     {
@@ -37,14 +38,18 @@ public class SceneInteractionManager : MonoBehaviour
         if (interactedObjects.Count >= requiredObjects.Count &&
             requiredObjects.TrueForAll(obj => interactedObjects.Contains(obj)))
         {
-            StartCoroutine(KetokPintu());
+            StartCoroutine(Pintu());
         }
     }
 
-    private System.Collections.IEnumerator KetokPintu()
+    private System.Collections.IEnumerator Pintu()
     {
         vCam1.Priority = 10;
         vCam2.Priority = 12;
+        if(worldInteractable != null)
+        {
+            worldInteractable.forcePlay();
+        }
         yield return new WaitForSeconds(3f);
         vCam2.Priority = 10;
         vCam1.Priority = 12;
@@ -53,6 +58,6 @@ public class SceneInteractionManager : MonoBehaviour
 
     public void LookAt()
     {
-        StartCoroutine(KetokPintu());
+        StartCoroutine(Pintu());
     }
 }

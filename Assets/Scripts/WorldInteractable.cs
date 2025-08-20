@@ -26,4 +26,11 @@ public class WorldInteractable : MonoBehaviour, IInteractable
         yield return new WaitUntil(() => !dialogueManager.isDialogueActive);
         sceneManager.RegisterInteraction(objectName);
     }
+
+    public void forcePlay()
+    {
+        dialogueManager.dialogueData = dialogueData;
+        dialogueManager.StartDialogue();
+        StartCoroutine(WaitUntilDialogueFinished());
+    }
 }

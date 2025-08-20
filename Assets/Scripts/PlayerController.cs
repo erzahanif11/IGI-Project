@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Animation")]
     public Animator animator;
     private string moveParameterName = "moveDirection";
+    private string isWalkingParameterName = "isWalking";
 
     [Header("Movement")]
     public float moveSpeed;
@@ -13,7 +14,8 @@ public class PlayerController : MonoBehaviour
     [Header("Dont edit")]
     private Rigidbody rb;
     private Vector2 moveInput;
-    
+    private bool isWalking;
+
 
     private void Awake()
     {
@@ -25,14 +27,24 @@ public class PlayerController : MonoBehaviour
     {
         float moveX = moveInput.x;
         animator.SetFloat(moveParameterName, Mathf.Abs(moveX));
+        animator.SetBool(isWalkingParameterName, isWalking);
         Move(moveX);
         FLip(moveX);
     }
     
     void Move(float moveX)
     {
-        Vector3 move = new Vector3(moveX * moveSpeed, 0, 0);
-        rb.linearVelocity = move;
+        if (Mathf.Abs(moveX) > 0.01f)
+        {
+            isWalking = true;
+            Vector3 move = new Vector3(moveX * moveSpeed, 0, 0);
+            rb.linearVelocity = move;
+        }
+        else
+        {
+            isWalking = false;
+            rb.linearVelocity = Vector3.zero;
+        }
     }
 
     void FLip(float moveX)

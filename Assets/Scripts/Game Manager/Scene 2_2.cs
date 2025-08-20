@@ -1,16 +1,14 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class Scene2_2 : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public CutsceneTrigger cutsceneTrigger;
+    public DoorSceneLoader doorSceneLoader;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        cutsceneTrigger.PlayCutscene(0);
+        doorSceneLoader.canLoadScene = true;
     }
 }

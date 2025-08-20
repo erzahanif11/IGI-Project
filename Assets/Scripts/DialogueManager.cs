@@ -35,7 +35,20 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         isDialogueActive = true;
         dialogueBox.SetActive(true);
+        var rb = playerController.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+        }
+        var animator = playerController.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetFloat("MoveX", 0);
+            animator.SetFloat("MoveY", 0);
+            animator.SetBool("isWalking", false);
+        }
         playerController.enabled = false;
+        
         StartCoroutine(TypeDialogue());
     }
 
