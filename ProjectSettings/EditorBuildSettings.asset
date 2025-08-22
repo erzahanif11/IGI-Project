@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene2_3_Ruang Tamu 1.unity
     guid: 3b403ad085a2dd342b8332410febc628
+  - enabled: 1
+    path: Assets/Scenes/Scene3_1_Kamar Hanni 1.unity
+    guid: 24cc903e02d09ac449958d9f2ac5fef3
+  - enabled: 1
+    path: Assets/Scenes/Scene3_2_Ruang Tamu 2.unity
+    guid: fde09944c69980243a3e51afc830210d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -5,7 +5,7 @@ public class CutsceneTrigger : MonoBehaviour
 {
     public GameObject cutscene;
     public PlayableDirector cutsceneDirector;
-    public MonoBehaviour playerMovement;
+    public PlayerController playerMovement;
     public MonoBehaviour playerInteract;
     public PlayableAsset[] playableAssets;
     private bool isCutscenePlaying = false;
@@ -19,11 +19,11 @@ public class CutsceneTrigger : MonoBehaviour
     {
         if (isCutscenePlaying || forceDisable)
         {
-            playerMovement.enabled = false;
+            playerMovement.forceIdle = true;
             playerInteract.enabled = false;
         }
         else{
-            playerMovement.enabled = true;
+            playerMovement.forceIdle = false;
             playerInteract.enabled = true;
         }
     }

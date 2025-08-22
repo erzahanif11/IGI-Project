@@ -13,4 +13,6 @@ public class DialogueData : ScriptableObject
 {
     public DialogueLine[] dialogueLines;
     public float typingSpeed = 0.05f;
+    public bool playCutsceneAfter;
+    public int cutsceneIndex;
 }

@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject dialogueBox;
     public TMP_Text dialogueText, nameText;
     public CutsceneDialogueControl CutsceneDialogueControl;
+    public CutsceneTrigger cutsceneTrigger;
+    public GameObject player; 
 
     private int dialogueIndex;
     public bool isTyping, isDialogueActive;
@@ -24,6 +26,7 @@ public class DialogueManager : MonoBehaviour
             NextLine();
         }
     }
+
     public void StartDialogue()
     {
         if (dialogueData == null || dialogueData.dialogueLines.Length == 0)
@@ -40,15 +43,8 @@ public class DialogueManager : MonoBehaviour
         {
             rb.linearVelocity = Vector3.zero;
         }
-        var animator = playerController.GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.SetFloat("MoveX", 0);
-            animator.SetFloat("MoveY", 0);
-            animator.SetBool("isWalking", false);
-        }
-        playerController.enabled = false;
-        
+        playerController.forceIdle = true;
+
         StartCoroutine(TypeDialogue());
     }
 
@@ -92,7 +88,18 @@ public class DialogueManager : MonoBehaviour
         dialogueIndex = 0;
         dialogueText.text = "";
         nameText.text = "";
-        playerController.enabled = true;
+        playerController.forceIdle = false;
+        if (dialogueData.playCutsceneAfter && cutsceneTrigger != null)
+        {
+            float yRot = player.transform.eulerAngles.y;
+
+            if (Mathf.Abs(yRot - 180f) < 5f) 
+            {
+                player.transform.rotation = Quaternion.Euler(0, 0, 0); 
+            }
+            cutsceneTrigger.PlayCutscene(dialogueData.cutsceneIndex);
+
+        }
         OnDialogueFinished();
     }
 

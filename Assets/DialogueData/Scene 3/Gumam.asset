@@ -10,13 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5935dde214038de49a6e356704aa7407, type: 3}
-  m_Name: CekUang
+  m_Name: Gumam
   m_EditorClassIdentifier: 
   dialogueLines:
   - speakerName: Hanni
-    dialogueText: Uang simpanan tinggal segini...
-  - speakerName: Hanni
-    dialogueText: Gimana caraku bayar sewa...
+    dialogueText: "Astaga\u2026 mabok lagi..."
   typingSpeed: 0.05
-  playCutsceneAfter: 0
-  cutsceneIndex: 0

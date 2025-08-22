@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     private string moveParameterName = "moveDirection";
     private string isWalkingParameterName = "isWalking";
+    public bool forceIdle = false;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -25,11 +26,19 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (forceIdle)
+        {
+            isWalking = false;
+            animator.SetFloat(moveParameterName, 0);
+            animator.SetBool(isWalkingParameterName, false);
+            rb.linearVelocity = Vector3.zero;
+            return;
+        }
         float moveX = moveInput.x;
-        animator.SetFloat(moveParameterName, Mathf.Abs(moveX));
-        animator.SetBool(isWalkingParameterName, isWalking);
         Move(moveX);
         FLip(moveX);
+        animator.SetFloat(moveParameterName, Mathf.Abs(moveX));
+        animator.SetBool(isWalkingParameterName, isWalking);
     }
     
     void Move(float moveX)
